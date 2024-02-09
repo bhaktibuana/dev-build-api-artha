@@ -3,22 +3,22 @@ deployment:
   tasks:
     - export DEPLOYPATH=~/public_html/dev-api-artha.bhaktibuana.com/dist
 
-    - name: Kill existing dev-api-artha process
-      action: run_commands
-      commands:
-        - pgrep -f 'dev-api-artha' | xargs kill || true
+    # - name: Kill existing dev-api-artha process
+    #   action: run_commands
+    #   commands:
+    #     - pgrep -f 'dev-api-artha' | xargs kill || true
 
     - name: Copy built binary to deployment path
       action: run_commands
       commands:
         - cp dev-api-artha $DEPLOYPATH/dev-api-artha
 
-    - name: Set permissions for dev-api-artha
-      action: run_commands
-      commands:
-        - chmod 0754 $DEPLOYPATH/dev-api-artha
+    # - name: Set permissions for dev-api-artha
+    #   action: run_commands
+    #   commands:
+    #     - chmod 0754 $DEPLOYPATH/dev-api-artha
 
-    - name: Start dev-api-artha process
-      action: run_commands
-      commands:
-        - cd $DEPLOYPATH && nohup ./dev-api-artha &
+    # - name: Start dev-api-artha process
+    #   action: run_commands
+    #   commands:
+    #     - cd $DEPLOYPATH && nohup ./dev-api-artha &
