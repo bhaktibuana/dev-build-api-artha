@@ -3,6 +3,7 @@ deployment:
   tasks:
     - export DEPLOYPATH=~/public_html/dev-api-artha.bhaktibuana.com/dist
     - if pgrep -f 'dev-api-artha'; then pgrep -f 'dev-api-artha' | xargs kill; fi
+    - rm -rf $DEPLOYPATH/dev-api-artha
     - cp dev-api-artha $DEPLOYPATH/dev-api-artha
     - chmod 0754 $DEPLOYPATH/dev-api-artha
     - cd $DEPLOYPATH && nohup ./dev-api-artha &
