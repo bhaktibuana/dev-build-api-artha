@@ -1,7 +1,7 @@
 ---
 deployment:
   tasks:
-    - export DEPLOYPATH=~/public_html/dev-api-artha.bhaktibuana.com/dist
+    - export DEPLOYPATH=/home/u1569610/public_html/dev-api-artha.bhaktibuana.com/dist
 
     # - name: Kill existing dev-api-artha process
     #   action: run_commands
@@ -11,7 +11,7 @@ deployment:
     - name: Copy built binary to deployment path
       action: run_commands
       commands:
-        - /bin/cp dev-api-artha $DEPLOYPATH/dev-api-artha
+        - cp dev-api-artha $DEPLOYPATH/dev-api-artha
 
     # - name: Set permissions for dev-api-artha
     #   action: run_commands
