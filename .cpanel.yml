@@ -11,7 +11,7 @@ deployment:
     - name: Copy built binary to deployment path
       action: run_commands
       commands:
-        - cp dev-api-artha $DEPLOYPATH/dev-api-artha
+        - /bin/cp dev-api-artha $DEPLOYPATH/dev-api-artha
 
     # - name: Set permissions for dev-api-artha
     #   action: run_commands
