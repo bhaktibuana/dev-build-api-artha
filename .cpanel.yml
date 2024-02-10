@@ -4,6 +4,7 @@ deployment:
     - export DEPLOYPATH=~/public_html/dev-api-artha.bhaktibuana.com/dist
     - if pgrep -f 'dev-api-artha'; then pgrep -f 'dev-api-artha' | xargs kill; fi
     - rm -rf $DEPLOYPATH/dev-api-artha
-    - cp dev-api-artha $DEPLOYPATH/dev-api-artha
+    - rm -rf $DEPLOYPATH/assets
+    - rsync -av --exclude '*.yml' --exclude '.*' ./ "$DEPLOYPATH"
     - chmod 0754 $DEPLOYPATH/dev-api-artha
     - cd $DEPLOYPATH && nohup ./dev-api-artha &
