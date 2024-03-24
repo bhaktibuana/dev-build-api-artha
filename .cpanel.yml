@@ -1,10 +1,10 @@
 ---
 deployment:
   tasks:
-    - export DEPLOYPATH=~/public_html/dev-api-artha.bhaktibuana.com/dist
-    - if pgrep -f 'dev-api-artha'; then pgrep -f 'dev-api-artha' | xargs kill; fi
-    - rm -rf $DEPLOYPATH/dev-api-artha
+    - export DEPLOYPATH=~/public_html/smtp-artha.bhaktibuana.com/dist
+    - if pgrep -f 'smtp-artha'; then pgrep -f 'smtp-artha' | xargs kill; fi
+    - rm -rf $DEPLOYPATH/smtp-artha
     - rm -rf $DEPLOYPATH/assets
     - rsync -av --exclude '*.yml' --exclude '.*' ./ "$DEPLOYPATH"
-    - chmod 0754 $DEPLOYPATH/dev-api-artha
-    - cd $DEPLOYPATH && nohup ./dev-api-artha &
+    - chmod 0754 $DEPLOYPATH/smtp-artha
+    - cd $DEPLOYPATH && nohup ./smtp-artha &
